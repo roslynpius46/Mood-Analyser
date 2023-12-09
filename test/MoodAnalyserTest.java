@@ -1,9 +1,10 @@
 import com.bridgelabz.moodanalyser.MoodAnalyser;
 import com.bridgelabz.moodanalyser.MoodAnalysisError;
 import com.bridgelabz.moodanalyser.MoodAnalysisException;
-import org.junit.Test;
 
+import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class MoodAnalyserTest {
     /**
@@ -67,6 +68,18 @@ public class MoodAnalyserTest {
         catch (MoodAnalysisException e) {
             assertEquals(MoodAnalysisError.NULL, e.error);
             assertEquals("Mood should not be null", e.getMessage());
+        }
+    }
+
+    @Test
+    public void testAnalyseMoodEmptyMessageShouldThrowMoodAnalysisException() {
+        try {
+            MoodAnalyser moodAnalyser = new MoodAnalyser("");
+            moodAnalyser.analyseMood();
+            fail("Expected MoodAnalysisException but did not occur");
+        } catch (MoodAnalysisException e) {
+            assertEquals(MoodAnalysisError.EMPTY, e.error);
+            assertEquals("Mood should not be empty", e.getMessage());
         }
     }
 
