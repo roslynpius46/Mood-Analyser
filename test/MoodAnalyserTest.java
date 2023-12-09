@@ -71,6 +71,10 @@ public class MoodAnalyserTest {
         }
     }
 
+    /**
+     *
+     * @desc Test case for empty message
+     */
     @Test
     public void testAnalyseMoodEmptyMessageShouldThrowMoodAnalysisException() {
         try {
