@@ -38,7 +38,7 @@ public class MoodAnalyser {
 
     /**
      * @desc constructor to initialize message
-     * @return mood
+     * @return mood (string)
      */
     public String analyseMood()  throws MoodAnalysisException {
 
