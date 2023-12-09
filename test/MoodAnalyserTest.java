@@ -1,5 +1,4 @@
-package com.bridgelabz.moodanalyser;
-
+import com.bridgelabz.moodanalyser.MoodAnalyser;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
