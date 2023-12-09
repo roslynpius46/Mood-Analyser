@@ -40,10 +40,17 @@ public class MoodAnalyser {
      * @desc constructor to initialize message
      * @return mood
      */
-    public String analyseMood()  {
-        if (message.toLowerCase().contains("sad")) {
+    public String analyseMood()  throws MoodAnalysisException {
+
+        if(message == null){
+            throw new MoodAnalysisException(MoodAnalysisError.NULL, "Mood should not be null");
+        }
+
+        else if (message.toLowerCase().contains("sad")) {
             return "SAD";
-        } else {
+        }
+
+        else {
             return "HAPPY";
         }
     }
